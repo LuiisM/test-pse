@@ -30,7 +30,7 @@ class Pse extends Controller
 		$ptp_test = new SoapService();
 		$request->merge([ 'ipAddress' => $request->ip()]);
 		$request->merge([ 'userAgent' => $request->header('User-Agent') ]);
-	    return	response()->json($ptp_test->beginTransaction($request->all()),HttpResponse::HTTP_CREATED);
+	        return response()->json($ptp_test->beginTransaction($request->all()),HttpResponse::HTTP_CREATED);
 	}
 	/**
 	 * 	Get the transaction information by transactionID
@@ -47,6 +47,6 @@ class Pse extends Controller
 	 */
 	public function createTransactionMulticredit(Request $request){
 		$ptp_test = new SoapService();
-		$ptp_test->beginTransactionMulticredit($form);
+		return response()->json($ptp_test->beginTransactionMulticredit($request->all()),HttpResponse::HTTP_CREATED);
 	}
 }
