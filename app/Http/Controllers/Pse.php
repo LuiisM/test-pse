@@ -46,7 +46,6 @@ class Pse extends Controller
 	 * 	@param array
 	 */
 	public function createTransactionMulticredit(Request $request){
-		$form = array( "bankCode"=>"1022", "bankInterface"=>"0", "returnURL"=>'https://www.google.com.co', "reference"=>"1455", "description"=>"Test", "language"=>"ES", "currency"=>"COP", "totalAmount"=>5000, "taxAmount"=>0.0, "devolutionBase"=>0.0, "tipAmount"=>0, 'ipAddress'=>"182.143.213.30", "userAgent"=>"Chrome", "additionalData"=>"", "payer"=>array( "documentType"=>"CC", "document"=>"12345", "emailAddress"=>"aaaasdasa@adasdads.com" ) );
 		$ptp_test = new SoapService();
 		$ptp_test->beginTransactionMulticredit($form);
 	}
