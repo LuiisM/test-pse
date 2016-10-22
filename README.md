@@ -1,7 +1,7 @@
 # test-pse
-Consume REST API
-
-# Pruebas a la libreria de pruebas del Webservice PSE
+#REST API
+Consume el servicio REST que utiliza la libreria de pruebas Luisb/Pse, con AngularJS
+* Pruebas a la libreria de pruebas del Webservice PSE
 
 # Configuración
     $ composer install
