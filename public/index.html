@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+
+<body ng-app="testApp" ng-cloak>
+    <div class="container">
+        <form ng-controller="TestCtrl as main" class="form-group alert" name="marcList" id="saveForm" ng-submit="main.send()" novalidate>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sub">Banco:</label>
+                            <select name="sub" class="form-control" ng-model="main.test.bankCode" autofocus required>
+                                <option ng-repeat="b in main.banklist" value="{{b.bankCode}}">{{b.bankName}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <strong class="help-block">Datos de la persona</strong>
+                            <label for="quantity">Tipo de documento:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar tipo de documento" ng-model="main.test.payer.documentType" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">N° de documento:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar documento" ng-model="main.test.payer.document" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Nombres:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar nombres" ng-model="main.test.payer.firstName" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Apellidos:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar apellidos" ng-model="main.test.payer.lastName" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Empresa:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar empresa" ng-model="main.test.payer.company" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Correo eléctronico:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar email" ng-model="main.test.payer.emailAddress" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Ciudad:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar ciudad" ng-model="main.test.payer.city" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Departamento:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar departamento" ng-model="main.test.payer.province" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Codigo del país:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar codigo del país" ng-model="main.test.payer.country" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Teléfono:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar numero de teléfono" ng-model="main.test.payer.phone" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Celular:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar numero de celular" ng-model="main.test.payer.mobile" value="" autofocus/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="type">Tipo:</label>
+                            <select name="type" class="form-control" ng-model="main.test.bankInterface" autofocus required>
+                                <option value="0">Persona</option>
+                                <option value="1">Empresa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Descripción:</label>
+                            <textarea name="desc" ng-maxlength="150" style="resize:vertical" class="form-control" placeholder="Ingresar la descripción" ng-model="main.test.description" value="" autofocus required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">URL de retorno:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar URL de retorno" ng-model="main.test.returnURL" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Referencia:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar referencia" ng-model="main.test.reference" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Lenguaje:</label>
+                            <select name="type" class="form-control" ng-model="main.test.language" autofocus required>
+                                <option value="ES">Español</option>
+                                <option value="EN">Inglés</option>
+                                <option value="FR">Francés</option>
+                                <option value="PT">Portugués</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Moneda:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar moneda local" ng-model="main.test.currency" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Monto a recaudar:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar monto" ng-model="main.test.totalAmount" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Impuestos:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar impuestos" ng-model="main.test.taxAmount" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Base de devolución:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar base de devolución" ng-model="main.test.devolutionBase" value="" autofocus/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Propina:</label>
+                            <input name="quantity" class="form-control" placeholder="Ingresar propina" ng-model="main.test.tipAmount" value="" autofocus/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <strong class="help-block">Dirección IP y Navegador tomado en el servidor</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group" align="center">
+                    <button id="aceptar" type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="hr" ></div>
+    <h2 class="text-center">Obtener información de la transacción</h2>
+    <div id="infosection" class="container" ng-controller="TranCtrl as info">
+        <div class="col-md-6">
+            <input name="quantity" class="form-control" placeholder="Ingresar ID de transacción" ng-model="info.search" value="" autofocus/>
+        </div>
+        <div class="col-md-6">
+            <button id="aceptar" ng-click="info.init()" ng-disabled="!info.search" class="btn btn-success">Consultar</button>
+        </div>
+        <div class="row">
+            <div class="container-fluid col-md-6"  style="margin-top:40px">
+                <label>Estado: </label>
+                <h2><pre>{{ info.result.transactionState}}</pre></h2>
+                <label>Mensaje: </label>
+                <h2><pre>{{ info.result.responseReasonText}}</pre></h2>
+            </div>
+            <div class="container col-md-6" style="margin-top:40px">
+                <div  ng-if="info.result">
+                <label>getTransactionInformationResult</label>
+                <pre>
+      transactionID: {{ info.result.transactionID  }}
+      sessionID: {{ info.result.sessionID  }}
+      reference: {{ info.result.reference  }}
+      requestDate: {{ info.result.requestDate  }}
+      bankProcessDate: {{ info.result.bankProcessDate  }}
+      onTest: {{ info.result.onTest  }}
+      returnCode: {{ info.result.returnCode }}
+      trazabilityCode: {{ info.result.trazabilityCode }}
+      transactionCycle: {{ info.result.transactionCycle }}
+      transactionState: {{ info.result.transactionState }}
+      responseCode: {{ info.result.responseCode }}
+      responseReasonCode: {{ info.result.responseReasonCode }}
+      responseReasonText: {{ info.result.responseReasonText }}
+            </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/components/jquery.min.js"></script>
+    <script src="js/components/angular.min.js"></script>
+    <script src="js/components/bootstrap.min.js"></script>
+    <script src="js/components/angular-cookies.min.js"></script>
+    <script src="js/components/angular-resource.min.js"></script>
+    <script src="js/components/angular-ui-router.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/PlacetopayService.js"></script>
+    <script src="js/TestController.js"></script>
+    <script src="js/TransactionController.js"></script>
+</body>
+
+</html>
