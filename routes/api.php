@@ -17,12 +17,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-/**
+/*
  * Testing REST Endpoints
  */
-Route::group(['prefix' => 'v1/ptp/test'], function() {
-	Route::get( 'transaction/{transactionId}', 'Pse@getTransactionInformation' );
-	Route::get( 'bank', 'Pse@getBankList' );
-	Route::post( 'transaction', 'Pse@createTransaction' );
-	Route::post( 'transactionmulticredit', 'Pse@createTransactionMulticredit' );
+Route::group(['prefix' => 'v1/ptp/test'], function () {
+    Route::get('transaction/{transactionId}', 'Pse@getTransactionInformation');
+    Route::get('bank', 'Pse@getBankList');
+    Route::post('transaction', 'Pse@createTransaction');
+    Route::post('transactionmulticredit', 'Pse@createTransactionMulticredit');
 });
