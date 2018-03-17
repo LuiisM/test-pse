@@ -1,3 +1,4 @@
+[![StyleCI](https://styleci.io/repos/71614138/shield?branch=master)](https://styleci.io/repos/71614138)
 # test-pse
 #REST API
 Consume el servicio REST que utiliza la libreria de pruebas Luisb/Pse, con AngularJS
